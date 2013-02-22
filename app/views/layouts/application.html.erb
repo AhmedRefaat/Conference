@@ -13,27 +13,60 @@
   <%end%>
   
 <style type="text/css">
+#wrapper {  
+    width: 600px;  
+}  
+  
+#img {  
+    float: right;  
+    margin: 10px;  
+    background: white;  
+    width: 180px;  
+    height: 180px;  
+}  
+  
+#header {  
+    background: #cdcdcd;  
+}  
+  
+#sidebar {  
+    float: left;  
+    width: 150px;  
+    background: #ee0;  
+    margin: 10px;  
+}  
+ 
 #wrap { 
   width: 750px; 
   margin: 0 auto; 
 }
 </style>
 </head>
-	<p style="text-align: center">
-	<%= image_tag(@photo, :width => '1000', :height => '500')%>
-	</p>
-
-<body style="text-align: 'center'"; background="./../assets/images/Cairo_University-0.jpg">
 <div id="wrap">
+	<p style="text-align: center">
+	<%= image_tag(@photo, :width => '800', :height => '500')%>
+	</p>
+<div id="wrapper">  
+      
+  
+<div id="sidebar">
+	<font size="4"><br />&nbsp&nbsp<%= link_to "Home", conf_home_path%> </font><br /><br />
+	<font size="4">&nbsp&nbsp<%= link_to "Register", conf_register_path%> </font><br /><br />
+	<font size="4">&nbsp&nbsp<%= link_to "Contact Us", conf_contact_path%>  </font><br /><br />
+	<font size="4">&nbsp&nbsp<%= link_to "Submission", conf_submit_path%>  </font><br /><br />
+	<font size="4">&nbsp&nbsp<%= link_to "About Us", conf_about_path%> </font> <br /><br />
+		<p style="text-align: center">
+	<%= image_tag(@photo, :width => '120', :height => '200')%>
+	</p>
+	</div>  
+  
+</div> 
+
+
+<body style="text-align: 'center'">
+
 <%= yield %>
-<fieldset>
-	<legend>Site Map</legend>
-	<%= link_to "Home", conf_home_path%> <br />
-	<%= link_to "Register", conf_register_path%> <br />
-	<%= link_to "Contact Us", conf_contact_path%> <br />
-	<%= link_to "Submission", conf_submit_path%> <br />
-	<%= link_to "About Us", conf_about_path%> <br />
-</fieldset>	
 </div>
+
 </body>
 </html>
