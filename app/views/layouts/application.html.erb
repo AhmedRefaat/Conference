@@ -11,10 +11,29 @@
   	<%else%>
   	<%= link_to "Sign in", login_path%>
   <%end%>
+  
+<style type="text/css">
+#wrap { 
+  width: 750px; 
+  margin: 0 auto; 
+}
+</style>
 </head>
-<body style="text-align: 'center'">
+	<p style="text-align: center">
+	<%= image_tag(@photo, :width => '1000', :height => '500')%>
+	</p>
 
+<body style="text-align: 'center'"; background="./../assets/images/Cairo_University-0.jpg">
+<div id="wrap">
 <%= yield %>
-
+<fieldset>
+	<legend>Site Map</legend>
+	<%= link_to "Home", conf_home_path%> <br />
+	<%= link_to "Register", conf_register_path%> <br />
+	<%= link_to "Contact Us", conf_contact_path%> <br />
+	<%= link_to "Submission", conf_submit_path%> <br />
+	<%= link_to "About Us", conf_about_path%> <br />
+</fieldset>	
+</div>
 </body>
 </html>

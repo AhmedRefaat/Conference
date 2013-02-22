@@ -21,6 +21,15 @@ class ConfController < ApplicationController
 
   def submit
     @photo = self.photoselecter
+    if session[:user_id]
+      @paper = Paper.new
+      respond_to do |format|
+      format.html # submit.html.erb
+      format.json { render json: @paper }
+    end
+    else
+      redirect_to login_url
+    end
   end
 
   def about

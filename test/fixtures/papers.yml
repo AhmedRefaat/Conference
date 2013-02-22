@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  auth1: MyString
+  auth2: 
+  auth3: MyString
+  auth4: MyString
+  abstract: MyText
+
+two:
+  title: MyString
+  auth1: MyString
+  auth2: 
+  auth3: MyString
+  auth4: MyString
+  abstract: MyText
