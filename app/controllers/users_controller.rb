@@ -69,7 +69,7 @@ class UsersController < ApplicationController
   def update
     @photo = self.photoselecter
     @user = User.find(params[:id])
-    @x = params[:priv]
+    @x = params[:user_status]
     p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     p @x
 
