@@ -10,8 +10,9 @@
  
 #sidebar {  
     float: left;  
-    width: 150px;  
-    background: #ee0;  
+    width: 150px; 
+    height: 700px; 
+    background-image:url('/images/bard.jpg');  
     margin: 25px;  
 }  
  
@@ -38,7 +39,7 @@
 width:100%;
 margin:0 auto 10px;
 border:1px solid #ccc;
-background-image:url('/images/bck.jpg');
+background-image:url('/images/bard.jpg');
 
 }
 #back {
@@ -68,21 +69,27 @@ background-image:url('/images/bck.jpg');
 
 	<br />
 	<p style="text-align: center">
-	<%= image_tag(@photo, :width => '690', :height => '440')%>
+	<%= image_tag(@photo, :width => '730', :height => '440')%>
 	</p>
 <div id="wrapper">  
       
   
 <div id="sidebar">
+	<h3  style="text-align:justify;color: red"> 
 	<font size="4"><br />&nbsp&nbsp<%= link_to "Home", conf_home_path%> </font><br /><br />
 	<font size="4">&nbsp&nbsp<%= link_to "Register", conf_register_path%> </font><br /><br />
 	<font size="4">&nbsp&nbsp<%= link_to "Contact Us", conf_contact_path%>  </font><br /><br />
 	<font size="4">&nbsp&nbsp<%= link_to "Submission", conf_submit_path%>  </font><br /><br />
 	<font size="4">&nbsp&nbsp<%= link_to "Committee", conf_Committees_path%>  </font><br /><br />
 	<font size="4">&nbsp&nbsp<%= link_to "About Us", conf_about_path%> </font> <br /><br />
+		<br />
+		<br />
 		<p style="text-align: center">
-	<%= image_tag(@photo, :width => '120', :height => '200')%>
+	<%= image_tag(@photo, :width => '130', :height => '200')%>
+	<br /> <br /> <br />
+	<%= image_tag('/images/downlad2.jpg', :width => '130', :height => '140')%>
 	</p>
+	
 	</div>  
   
 </div> 
