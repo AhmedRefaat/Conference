@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @paper.title %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @paper.abstract %>
+</p>
+
+<p>
+  <b>Auth1:</b>
+  <%= @paper.auth1 %>
+</p>
+<%if @paper.auth2%>
+<p>
+  <b>Auth2:</b>
+  <%= @paper.auth2 %>
+</p>
+<%end%>
+<%if @paper.auth3%>
+<p>
+  <b>Auth3:</b>
+  <%= @paper.auth3 %>
+</p>
+<%end%>
+<%if @paper.auth4%>
+<p>
+  <b>Auth4:</b>
+  <%= @paper.auth4 %>
+</p>
+<%end%>
+
+<%= link_to 'Edit', edit_paper_path(@paper) %> |
+<%= link_to 'Back', papers_path %>
