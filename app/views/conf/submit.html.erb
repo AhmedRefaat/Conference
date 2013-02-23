@@ -8,9 +8,7 @@
     <th>Title</th>
     <th>Abstract</th>
     <th>Auth1</th>
-    <th>Auth2</th>
-    <th>Auth3</th>
-    <th>Auth4</th>
+    <th>Paper Approval</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,9 +19,7 @@
     <td><%= paper.title %></td>
     <td><%= paper.abstract %></td>
     <td><%= paper.auth1 %></td>
-    <td><%= paper.auth2 %></td>
-    <td><%= paper.auth3 %></td>
-    <td><%= paper.auth4 %></td>
+    <td><%= paper.status %></td>
     <td><%= link_to 'Show', paper %></td>
     <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
     <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>

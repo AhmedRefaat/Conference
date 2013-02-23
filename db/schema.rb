@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215200822) do
+ActiveRecord::Schema.define(:version => 20130223144517) do
+
+  create_table "papers", :force => true do |t|
+    t.string   "title"
+    t.text     "abstract"
+    t.string   "auth1"
+    t.string   "auth2"
+    t.string   "auth3"
+    t.string   "auth4"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "status"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -30,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130215200822) do
     t.boolean  "admin"
     t.string   "username"
     t.string   "password_digest"
+    t.string   "user_status"
   end
 
 end

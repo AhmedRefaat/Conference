@@ -1,4 +1,6 @@
 Conference::Application.routes.draw do
+  resources :papers
+
   get "admin/index"
   
   controller :sessions do

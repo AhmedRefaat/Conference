@@ -2,16 +2,18 @@
 
 one:
   title: MyString
+  abstract: MyText
   auth1: MyString
-  auth2: 
+  auth2: MyString
   auth3: MyString
   auth4: MyString
-  abstract: MyText
+  user_id: 1
 
 two:
   title: MyString
+  abstract: MyText
   auth1: MyString
-  auth2: 
+  auth2: MyString
   auth3: MyString
   auth4: MyString
-  abstract: MyText
+  user_id: 1
