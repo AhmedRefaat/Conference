@@ -7,16 +7,7 @@
 #wrapper {  
     width: 600px;  
 }  
-  
-#img {  
-    float: right;  
-    margin: 10px;  
-    background: white;  
-    width: 180px;  
-    height: 180px;  
-}  
-  
-  
+ 
 #sidebar {  
     float: left;  
     width: 150px;  
@@ -25,30 +16,21 @@
 }  
  
 #wrap { 
-  width: 750px; 
+  width: 850px; 
   margin: 0 auto; 
 }
 
-            #container {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-
-
+#container {
+ width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow:hidden; 
   background: url('/images/brown1.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-            }
-html,body{ margin:0; padding:0; height:100%; width:100%; }
-#full-size{
-  height:100%;
-  width:100%;
-  overflow:hidden; /* or overflow:auto; if you want scrollbars */
-
 }
 
 
@@ -59,12 +41,14 @@ border:1px solid #ccc;
 background-image:url('/images/bck.jpg');
 
 }
-
+#back {
+	background-image:url('/images/modern1.jpg');
+}
 </style>
-
+<div id="back">
 <div id="wrap">
-	<div id="container">
-<div id="full-size">	
+<div id="container">
+	
 <div id="header">
   <br /><title>Conference</title>
   
