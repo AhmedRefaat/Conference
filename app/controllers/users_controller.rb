@@ -69,6 +69,9 @@ class UsersController < ApplicationController
   def update
     @photo = self.photoselecter
     @user = User.find(params[:id])
+    @x = params[:priv]
+    p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    p @x
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -97,5 +100,6 @@ class UsersController < ApplicationController
   end
   def admin_edit
     @user = User.find(4)
+    @priv = ["admin", "moderator", "conference_member"]
   end
 end
