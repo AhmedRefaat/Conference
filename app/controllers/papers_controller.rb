@@ -1,7 +1,14 @@
 class PapersController < ApplicationController
+  
+    def photoselecter
+    @num = rand(15) +1
+    @photo  = "cairo"+@num.to_s+".jpg"
+    return @photo
+  end
   # GET /papers
   # GET /papers.json
   def index
+    @photo = self.photoselecter
     @papers = Paper.all
 
     respond_to do |format|
@@ -13,6 +20,7 @@ class PapersController < ApplicationController
   # GET /papers/1
   # GET /papers/1.json
   def show
+    @photo = self.photoselecter
     @paper = Paper.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +32,7 @@ class PapersController < ApplicationController
   # GET /papers/new
   # GET /papers/new.json
   def new
+    @photo = self.photoselecter
     @paper = Paper.new
 
     respond_to do |format|
@@ -34,6 +43,7 @@ class PapersController < ApplicationController
 
   # GET /papers/1/edit
   def edit
+    @photo = self.photoselecter
     @paper = Paper.find(params[:id])
   end
 
@@ -57,6 +67,7 @@ class PapersController < ApplicationController
   # PUT /papers/1
   # PUT /papers/1.json
   def update
+    @photo = self.photoselecter
     @paper = Paper.find(params[:id])
     @paper.user_id = session[:user_id]
 

@@ -1,5 +1,4 @@
 class ConfController < ApplicationController
-  @@photo = ""
   def photoselecter
     @num = rand(15) +1
     @photo  = "cairo"+@num.to_s+".jpg"
@@ -32,6 +31,9 @@ class ConfController < ApplicationController
     else
       redirect_to login_url
     end
+  end
+  def  Committees
+    @photo = self.photoselecter
   end
 
   def about
