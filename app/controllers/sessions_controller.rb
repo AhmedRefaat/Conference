@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
     return @photo
   end
   def new
+    @photo = self.photoselecter
   end
 
   def create
