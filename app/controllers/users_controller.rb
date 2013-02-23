@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+        def photoselecter
+    @num = rand(15) +1
+    @photo  = "cairo"+@num.to_s+".jpg"
+    return @photo
+  end
   # GET /users
   # GET /users.json
   def index
+    @photo = self.photoselecter
     @users = User.order(:name)
 
     respond_to do |format|
@@ -13,6 +19,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @photo = self.photoselecter
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +31,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    @photo = self.photoselecter
     @user = User.new
 
     respond_to do |format|
@@ -34,12 +42,14 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @photo = self.photoselecter
     @user = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
+    @photo = self.photoselecter
     @user = User.new(params[:user])
 
     respond_to do |format|
@@ -57,6 +67,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    @photo = self.photoselecter
     @user = User.find(params[:id])
 
     respond_to do |format|

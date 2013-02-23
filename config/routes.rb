@@ -26,6 +26,8 @@ Conference::Application.routes.draw do
   get "conf/submit"
 
   get "conf/about"
+  
+  get "conf/Committees"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
