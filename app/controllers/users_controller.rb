@@ -96,6 +96,6 @@ class UsersController < ApplicationController
     end
   end
   def admin_edit
-    @user = User.find(params[:id])
+    @user = User.find(4)
   end
 end

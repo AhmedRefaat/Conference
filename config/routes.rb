@@ -8,6 +8,10 @@ Conference::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
+  
+  controller :users do
+    get "users/aedit" => :admin_edit
+  end 
 
   #get "sessions/new"
 
