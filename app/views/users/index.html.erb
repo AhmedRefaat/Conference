@@ -9,14 +9,11 @@
     <th>Name</th>
     <th>Username</th>
     <th>Job</th>
-    <th>Address</th>
-    <th>City</th>
     <th>Country</th>
     <th>Organization</th>
     <th>Faculty</th>
     <th>Departement</th>
     <th>Mail</th>
-    <th>Mobile</th>
     <th></th>
     <th></th>
     <th></th>
@@ -27,14 +24,11 @@
     <td><%= user.name %></td>
     <td><%= user.username %></td>
     <td><%= user.job %></td>
-    <td><%= user.address %></td>
-    <td><%= user.city %></td>
     <td><%= user.country %></td>
     <td><%= user.organization %></td>
     <td><%= user.faculty %></td>
     <td><%= user.departement %></td>
     <td><%= user.mail %></td>
-    <td><%= user.mobile %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

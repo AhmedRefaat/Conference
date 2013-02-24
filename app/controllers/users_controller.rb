@@ -69,9 +69,10 @@ class UsersController < ApplicationController
   def update
     @photo = self.photoselecter
     @user = User.find(params[:id])
-    @x = params[:user_status]
-    p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-    p @x
+    if (params[:user_status] = "admin")
+      
+    end
+    @user.user_status = params[:user_status]
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
