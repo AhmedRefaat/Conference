@@ -11,13 +11,13 @@
 #sidebar {  
     float: left;  
     width: 150px; 
-    height: 700px; 
+    height: 900px; 
     background-image:url('/images/bard.jpg');  
     margin: 25px;  
 }  
  
 #wrap { 
-  width: 900px; 
+  width: 1100px; 
   margin: 0 auto; 
 }
 
@@ -56,7 +56,7 @@ background-image:url('/images/bard.jpg');
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <h1 style="text-align: center">veterinary Conference</h1> <br />
+  <h1 style="text-align: center;color: black "><font size="9" face="Garamond"> Veterinary Conference</font></h1> <br />
   </div>
     <% if session[:user_id]%>
   	<h3><li>logging: (<%= User.find(session[:user_id]).name%>)   <%= link_to "Log out", logout_path, :method => "delete"%></li> </h3> 
@@ -69,7 +69,7 @@ background-image:url('/images/bard.jpg');
 
 	<br />
 	<p style="text-align: center">
-	<%= image_tag(@photo, :width => '730', :height => '440')%>
+	<%= image_tag(@photo, :width => '900', :height => '440')%>
 	</p>
 <div id="wrapper">  
       
@@ -85,9 +85,9 @@ background-image:url('/images/bard.jpg');
 		<br />
 		<br />
 		<p style="text-align: center">
-	<%= image_tag(@photo, :width => '130', :height => '200')%>
+	<%= image_tag(@photo, :width => '130', :height => '250')%>
 	<br /> <br /> <br />
-	<%= image_tag('/images/downlad2.jpg', :width => '130', :height => '140')%>
+	<%= image_tag('/images/downlad2.jpg', :width => '130', :height => '200')%>
 	</p>
 	
 	</div>  
