@@ -71,7 +71,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @current_user = User.find(session[:user_id])
     #case of non-admin user try to edit in his details
-    if (@current_user.user_status == 202 |  @current_user.user_status == 205)
+    #@current_user.user_status == 202 |  @current_user.user_status == 205
+    if (@photo)
       respond_to do |format|
         if @user.update_attributes(params[:user])
           format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -111,7 +112,7 @@ class UsersController < ApplicationController
   end
   def admin_edit
     @user = User.find(4)
-    @priv = ["admin", "moderator", "conference_member"]
+    @priv = [["admin" , 307], ["moderator", 20], ["conference_member", 202]]
     # conference_member = 202 , moderator = 205 , admin = 307  
     
   end
