@@ -102,5 +102,6 @@ class UsersController < ApplicationController
   def admin_edit
     @user = User.find(4)
     @priv = ["admin", "moderator", "conference_member"]
+    # conference_member = 202 , moderator = 205 , admin = 307  
   end
 end

@@ -12,26 +12,20 @@
     <th>Country</th>
     <th>Organization</th>
     <th>Faculty</th>
-    <th>Departement</th>
     <th>Mail</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td style="width: 80px; max-width: 80px; overflow: hidden"><%= user.name %></td>
+    <td style="width: 180px; max-width: 150px; overflow: hidden"><%= user.name %></td>
     <td><%= user.username %></td>
     <td style="width: 40px; max-width: 40px; overflow: hidden"><%= user.job %></td>
-    <td style="width: 40px; max-width: 40px; overflow: hidden"><%= user.country %></td>
-    <td style="width: 40px; max-width: 40px; overflow: hidden"><%= user.organization %></td>
+    <td style="width: 40px; max-width: 50px; overflow: hidden"><%= user.country %></td>
+    <td style="width: 115px; max-width: 150px; overflow: hidden"><%= user.organization %></td>
     <td style="width: 40px; max-width: 40px; overflow: hidden"><%= user.faculty %></td>
-    <td style="width: 40px; max-width: 40px; overflow: hidden"><%= user.departement %></td>
-    <td style="width: 70px; max-width: 70px; overflow: hidden"><%= user.mail %></td>
-    <td bgcolor="yellow"><%= link_to 'Show', user %></td>
-    <td bgcolor="yellow"><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td bgcolor="yellow"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td style="width: 170px; max-width: 170px; overflow: hidden"><%= user.mail %></td>
+    <td bgcolor="yellow"><%= link_to 'More Details', user %></td>
   </tr>
 <% end %>
 </table>
