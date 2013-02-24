@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do 
+group :developement, :test do 
   gem 'sqlite3'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'

@@ -24,6 +24,10 @@
   	<%= f.label :User_Privilege %>
   	<%= select_tag "user_status", options_for_select(@priv)%>
   </div>
+    <div class="field"; style="display: none">
+    <%= f.label :password, 'Password' %>:<br />
+    <%= f.password_field :password, size:40 %>
+  </div>
 
   </fieldset>
 
