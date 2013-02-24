@@ -69,19 +69,29 @@ class UsersController < ApplicationController
   def update
     @photo = self.photoselecter
     @user = User.find(params[:id])
-    if (params[:user_status] = "admin")
-      
-    end
-    @user.user_status = params[:user_status]
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        #format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.html { redirect_to conf_home_url, notice: "User #{@user.username} was successfully updated." }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    @current_user = User.find(session[:user_id])
+    #case of non-admin user try to edit in his details
+    if (@current_user.user_status == 202 |  @current_user.user_status == 205)
+      respond_to do |format|
+        if @user.update_attributes(params[:user])
+          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          #format.html { redirect_to conf_home_url, notice: "User #{@user.username} was successfully updated." }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+    else 
+      respond_to do |format|
+        if @user.update_attributes(params[:user])
+          format.html { redirect_to @user, notice: 'User was successfully updated.' }
+          #format.html { redirect_to conf_home_url, notice: "User #{@user.username} was successfully updated." }
+          format.json { head :no_content }
+        else
+          format.html { render action: "admin_edit" }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -103,5 +113,6 @@ class UsersController < ApplicationController
     @user = User.find(4)
     @priv = ["admin", "moderator", "conference_member"]
     # conference_member = 202 , moderator = 205 , admin = 307  
+    
   end
 end
