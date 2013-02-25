@@ -133,9 +133,15 @@ class UsersController < ApplicationController
   end
   def admin_edit
     @photo = self.photoselecter
-    @user = User.find(4)
+    @current_user = User.find(session[:user_id])
+    if (@current_user.user_status == "307")
+    @user = User.find(params[:id])
     @priv = ["admin" ,"moderator", "conference_member"]
-    # conference_member = 202 , moderator = 205 , admin = 307  
+    # conference_member = 202 , moderator = 205 , admin = 307
+    respond_to do |format|
+      format.html #render admin_edit page
+    end
+      end  
     
   end
 end

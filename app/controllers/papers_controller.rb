@@ -9,11 +9,26 @@ class PapersController < ApplicationController
   # GET /papers.json
   def index
     @photo = self.photoselecter
-    @papers = Paper.all
+    if (session[:user_id])
+      @current_user = User.find(session[:user_id])
+      if (@current_user.user_status == "307" | @current_user.user_status == "205")
+        @papers = Paper.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @papers }
+      respond_to do |format|
+         format.html # index.html.erb
+          format.json { render json: @papers }
+      end
+      else
+        @paper = Paper.find_by_user_id(session[:user_id])
+          respond_to do |format|
+          format.html # index.html.erb
+          format.json { render json: @papers }
+        end 
+      end
+    else
+         respond_to do |format|
+             format.html {redirect_to login_path, notice: "PLease sign in first"}
+        end
     end
   end
 
