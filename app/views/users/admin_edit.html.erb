@@ -22,7 +22,7 @@
   </div>
   <div>
   	<%= f.label :User_Privilege %>
-  	<%= select_tag "user_status", options_for_select(@priv)%>
+  	<%= select_tag "user_status", options_for_select(@priv), :prompt => "Select User Role"%>
   </div>
     <div class="field"; style="display: none">
     <%= f.label :password, 'Password' %>:<br />

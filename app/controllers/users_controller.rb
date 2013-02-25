@@ -79,7 +79,7 @@ class UsersController < ApplicationController
       @user.user_status = 202
     end
     #@current_user.user_status == 202 |  @current_user.user_status == 205
-    if (@photo)
+    if (@current_user.user_status == 202 |  @current_user.user_status == 205)
       respond_to do |format|
         if @user.update_attributes(params[:user])
           #format.html { redirect_to @user, notice: 'User was successfully updated.' }
