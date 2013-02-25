@@ -8,11 +8,18 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @photo = self.photoselecter
+    @current_user = User.find(session[:user_id])
+    if (@current_user.user_status == "307")
     @users = User.order(:name)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+    end
+    else 
+      respond_to do |format|
+      format.html { redirect_to conf_home_url, notice: "Sorry!, You don't have the premission to Access this Page" }
+      end 
     end
   end
 
