@@ -19,6 +19,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if (session[:user_id])
+    
     @photo = self.photoselecter
     @current_user = User.find(session[:user_id])
     @user = User.find(params[:id])
@@ -26,6 +28,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
+    end
+    else 
+    redirect_to login_path
     end
   end
 
