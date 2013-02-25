@@ -2,5 +2,8 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
+<%= link_to 'Show', @user %> 
+<br />
+<% if (@current_user.user_status == "307")%>
 <%= link_to 'Back', users_path %>
+<% end %>

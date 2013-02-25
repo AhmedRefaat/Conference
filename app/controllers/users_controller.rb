@@ -50,6 +50,7 @@ class UsersController < ApplicationController
   def edit
     @photo = self.photoselecter
     @user = User.find(params[:id])
+    @current_user = User.find(session[:user_id])
   end
 
   # POST /users
@@ -78,14 +79,14 @@ class UsersController < ApplicationController
     @current_user = User.find(session[:user_id])
     #case of non-admin user try to edit in his details
     if (params[:user_status] == "admin")
-      @user.user_status = 307
+      @user.user_status = "307"
     elsif (params[:user_status] == "moderator")
-      @user.user_status = 205
+      @user.user_status = "205"
     else 
-      @user.user_status = 202
+      @user.user_status = "202"
     end
     #@current_user.user_status == 202 |  @current_user.user_status == 205
-    if (@current_user.user_status != 307)
+    if (@current_user.user_status != "307")
       respond_to do |format|
         if @user.update_attributes(params[:user])
           #format.html { redirect_to @user, notice: 'User was successfully updated.' }
