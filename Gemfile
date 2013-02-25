@@ -1,36 +1,47 @@
 source 'https://rubygems.org'
 
- #gem 'rails', '3.2.11'
- gem 'rails', '3.2.8'
+gem 'rails', '3.2.8'
+ gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :developement, :test do 
+group :development, :test do 
   gem 'sqlite3'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
 end
+group :production do 
+  gem 'pg'
+end
 
+group :test do
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels'
+end
+
+gem "nifty-generators", :group => :development
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'therubyracer'              
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
+  
   gem 'uglifier', '>= 1.0.3'
-  gem 'bcrypt-ruby', '~> 3.0.0'
+  
+  gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 end
-
-group :production do 
-  gem 'pg'
-end
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 
 gem 'jquery-rails'
 

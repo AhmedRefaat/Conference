@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @photo = self.photoselecter
+    @current_user = User.find(session[:user_id])
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -79,7 +80,7 @@ class UsersController < ApplicationController
       @user.user_status = 202
     end
     #@current_user.user_status == 202 |  @current_user.user_status == 205
-    if (@current_user.user_status == 202 |  @current_user.user_status == 205)
+    if (@current_user.user_status != 307)
       respond_to do |format|
         if @user.update_attributes(params[:user])
           #format.html { redirect_to @user, notice: 'User was successfully updated.' }
