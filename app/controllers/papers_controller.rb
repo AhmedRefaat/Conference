@@ -11,7 +11,7 @@ class PapersController < ApplicationController
     @photo = self.photoselecter
     if (session[:user_id])
       @current_user = User.find(session[:user_id])
-      if (@current_user.user_status == "307" | @current_user.user_status == "205")
+      if (@current_user.user_status == "307")
         @papers = Paper.all
 
       respond_to do |format|
