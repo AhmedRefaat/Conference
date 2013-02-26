@@ -56,7 +56,10 @@ background-image:url('/images/bard.jpg');
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <h1 style="text-align: center;color: black "><font size="9" face="Garamond"> International Veterinary Pathology Conference</font></h1> <br />
+  <h1 style="text-align: center;color: black "><font size="11" face="Garamond"> First international Conference of Pathology </font></h1> 
+  <h1 style="text-align: center;color: black "><font size="6" face="Garamond"> Department Faculty of Veterinary Medicine, Cairo University</font></h1> 
+  <h1 style="text-align: center;color: black "><font size="6" face="Garamond">  25-26 April 2013 </font></h1> 
+  <h1 style="text-align: center;color: black "><font size="6" face="Garamond">  Sheraton Dreamland & Confernce center</font></h1> <br />
   </div>
     <% if session[:user_id]%>
   	<h3><li>logging: (<%= User.find(session[:user_id]).name%>)   <%= link_to "Log out", logout_path, :method => "delete"%>|<%= link_to "Settings", User.find(session[:user_id])%></li> </h3>
