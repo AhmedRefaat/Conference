@@ -22,12 +22,15 @@
     <td><%= paper.auth3 %></td>
     <td><%= paper.auth4 %></td>
     <td><%= link_to 'Show', paper %></td>
+    <% if @current_user.user_status == "307"%>
     <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
     <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<% if @current_user.user_status == "307"%>
 <%= link_to 'New Paper', new_paper_path %>
+<% end %>

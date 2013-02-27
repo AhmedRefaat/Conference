@@ -84,6 +84,7 @@ class UsersController < ApplicationController
     @photo = self.photoselecter
     @user = User.find(params[:id])
     @current_user = User.find(session[:user_id])
+    @user.user_status = "307"
     #case of non-admin user try to edit in his details
     if (params[:user_status] == "admin")
       @user.user_status = "307"
@@ -95,6 +96,7 @@ class UsersController < ApplicationController
     #@current_user.user_status == 202 |  @current_user.user_status == 205
     if (@current_user.user_status != "307")
       respond_to do |format|
+     @user.user_status = "307"
         if @user.update_attributes(params[:user])
           #format.html { redirect_to @user, notice: 'User was successfully updated.' }
           format.html { redirect_to conf_home_url, notice: "User #{@user.username} was successfully updated." }
@@ -134,6 +136,8 @@ class UsersController < ApplicationController
   def admin_edit
     @photo = self.photoselecter
     @current_user = User.find(session[:user_id])
+    p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    p params[:id]
     @user = User.find(params[:id])
     @priv = ["admin" ,"moderator", "conference_member"]
     # conference_member = 202 , moderator = 205 , admin = 307

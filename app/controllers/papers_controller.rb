@@ -8,23 +8,32 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
+    @papers = []
     @photo = self.photoselecter
     if (session[:user_id])
-      @current_user = User.find(session[:user_id])
-      if (@current_user.user_status == "307")
-        @papers = Paper.all
-
-      respond_to do |format|
-         format.html # index.html.erb
-          format.json { render json: @papers }
-      end
-      else
-        @paper = Paper.find_by_user_id(session[:user_id])
-          respond_to do |format|
-          format.html # index.html.erb
-          format.json { render json: @papers }
-        end 
-      end
+      ##############################################################################
+      #this is a register user 
+      ##############################################################################
+          @current_user = User.find(session[:user_id])
+          if (@current_user.user_status == "307" or @current_user.user_status == "205")
+            #this is an authorized user
+                @papers = Paper.all
+               # @papers = [@paper]
+        
+              respond_to do |format|
+                  format.html # index.html.erb
+                  format.json { render json: @papers }
+              end
+          else
+            #@paper = Paper.find_by_user_id(session[:user_id])
+              #respond_to do |format|
+              #format.html # index.html.erb
+              #format.json { render json: @papers }
+            #end
+            respond_to do |format|
+                 format.html {redirect_to conf_home_path, notice: "Sorry! you aren't Authorized to access this page"}
+            end  
+          end
     else
          respond_to do |format|
              format.html {redirect_to login_path, notice: "PLease sign in first"}
