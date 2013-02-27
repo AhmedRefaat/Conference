@@ -96,7 +96,6 @@ class UsersController < ApplicationController
     #@current_user.user_status == 202 |  @current_user.user_status == 205
     if (@current_user.user_status != "307")
       respond_to do |format|
-     @user.user_status = "307"
         if @user.update_attributes(params[:user])
           #format.html { redirect_to @user, notice: 'User was successfully updated.' }
           format.html { redirect_to conf_home_url, notice: "User #{@user.username} was successfully updated." }
