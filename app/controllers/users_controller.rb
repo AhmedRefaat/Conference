@@ -65,7 +65,7 @@ class UsersController < ApplicationController
   def create
     @photo = self.photoselecter
     @user = User.new(params[:user])
-    @user.id = session[:id]
+    #@user.id = session[:id]
 
     respond_to do |format|
       if @user.save

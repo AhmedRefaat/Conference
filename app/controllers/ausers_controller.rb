@@ -48,7 +48,7 @@ class AusersController < ApplicationController
 
     respond_to do |format|
       if @auser.save
-      session[:id] = @auser.id
+      #session[:id] = @auser.id
         format.html { redirect_to @auser, notice: 'Auser was successfully created.' }
         format.json { render json: @auser, status: :created, location: @auser }
       else
