@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   def create
     @photo = self.photoselecter
-    user = User.find_by_username(params[:username])
+    user = Auser.find_by_username(params[:username])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to conf_home_url

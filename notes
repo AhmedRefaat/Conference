@@ -1,0 +1,3 @@
+delete personal column from user table 
+create Auser table (username, password)
+add active_admin gem                                                                      

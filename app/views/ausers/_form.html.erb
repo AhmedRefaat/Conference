@@ -1,0 +1,37 @@
+<%= form_for(@auser) do |f| %>
+  <% if @auser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@auser.errors.count, "error") %> prohibited this auser from being saved:</h2>
+
+      <ul>
+      <% @auser.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <fieldset>
+  <legend>Enter User Details</legend>
+
+  <div>
+    <%= f.label :Username %>:
+    <%= f.text_field :username, size: 40 %>
+  </div>
+
+  <div>
+    <%= f.label :password, 'Password' %>:
+    <%= f.password_field :password, size: 40 %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation, 'Confirm' %>:
+    <%= f.password_field :password_confirmation, size: 40 %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+  </fieldset>
+<% end %>

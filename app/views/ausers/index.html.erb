@@ -1,0 +1,25 @@
+<h1>Listing ausers</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Password digest</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ausers.each do |auser| %>
+  <tr>
+    <td><%= auser.username %></td>
+    <td><%= auser.password_digest %></td>
+    <td><%= link_to 'Show', auser %></td>
+    <td><%= link_to 'Edit', edit_auser_path(auser) %></td>
+    <td><%= link_to 'Destroy', auser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auser', new_auser_path %>

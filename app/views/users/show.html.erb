@@ -63,5 +63,5 @@
 <% if (@current_user.user_status == "307") %>
 	<%= link_to 'Users List', users_path %>|
 	<%= link_to 'Delete This User', @user, method: :delete, data: { confirm: 'Are you sure?' } %>|
-	<%= link_to 'Admin Edit', users_aedit_path(@user) %> 
+	<%= link_to 'Admin Edit', users_id_aedit_path(@user) %> 
 <% end %>

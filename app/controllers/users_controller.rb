@@ -65,6 +65,7 @@ class UsersController < ApplicationController
   def create
     @photo = self.photoselecter
     @user = User.new(params[:user])
+    @user.id = session[:id]
 
     respond_to do |format|
       if @user.save
@@ -132,11 +133,13 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def admin_edit
+  def admin_edit(user_id)
     @photo = self.photoselecter
     @current_user = User.find(session[:user_id])
     p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     p params[:id]
+    p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    p user
     @user = User.find(params[:id])
     @priv = ["admin" ,"moderator", "conference_member"]
     # conference_member = 202 , moderator = 205 , admin = 307

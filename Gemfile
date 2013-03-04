@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
  gem 'bcrypt-ruby', '~> 3.0.0'
+  gem "activeadmin"
+ gem 'sass-rails',   '~> 3.2.3'
+
 
 
 # Bundle edge Rails instead:
@@ -31,6 +34,9 @@ group :assets do
   gem 'therubyracer'              
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+    gem 'country-select'
+  gem 'coffee-script-source', '~> 1.4.0'
+
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

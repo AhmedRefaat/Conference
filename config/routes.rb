@@ -1,4 +1,10 @@
 Conference::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  resources :ausers
+
   resources :papers
 
   get "admin/index"
@@ -10,7 +16,7 @@ Conference::Application.routes.draw do
   end
   
   controller :users do
-    get "users/aedit" => :admin_edit
+    get "users/id/aedit" => 'user#admin_edit'
   end 
 
   #get "sessions/new"
