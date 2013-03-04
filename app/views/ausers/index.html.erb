@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Username</th>
-    <th>Password digest</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,10 +11,11 @@
 <% @ausers.each do |auser| %>
   <tr>
     <td><%= auser.username %></td>
-    <td><%= auser.password_digest %></td>
+    <%if (User.find(session[:user_id]).admin%>
     <td><%= link_to 'Show', auser %></td>
     <td><%= link_to 'Edit', edit_auser_path(auser) %></td>
     <td><%= link_to 'Destroy', auser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>

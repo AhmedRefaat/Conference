@@ -10,12 +10,10 @@ class PapersController < ApplicationController
   def index
     @papers = []
     @photo = self.photoselecter
-    if (session[:user_id])
+    if ((session[:user_id] != nil) and ((User.find(session[:user_id]).admin) or (User.find(session[:user_id]).officer)))
       ##############################################################################
       #this is a register user 
       ##############################################################################
-          @current_user = User.find(session[:user_id])
-          if (@current_user.user_status == "307" or @current_user.user_status == "205")
             #this is an authorized user
                 @papers = Paper.all
                # @papers = [@paper]
@@ -34,11 +32,6 @@ class PapersController < ApplicationController
                  format.html {redirect_to conf_home_path, notice: "Sorry! you aren't Authorized to access this page"}
             end  
           end
-    else
-         respond_to do |format|
-             format.html {redirect_to login_path, notice: "PLease sign in first"}
-        end
-    end
   end
 
   # GET /papers/1
@@ -46,22 +39,35 @@ class PapersController < ApplicationController
   def show
     @photo = self.photoselecter
     @paper = Paper.find(params[:id])
+    if ((session[:user_id] != nil) and ((User.find(session[:user_id]).admin) or (User.find(session[:user_id]).officer) or (@paper.user_id == session[:user_id])))
+    @paper = Paper.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @paper }
     end
+    else 
+        respond_to do |format|
+                 format.html {redirect_to conf_home_path, notice: "Sorry! you aren't Authorized to access this page"}
+            end  
+          end
   end
 
   # GET /papers/new
   # GET /papers/new.json
   def new
     @photo = self.photoselecter
+    if (session[:user_id])
     @paper = Paper.new
 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @paper }
+    end
+    else
+       respond_to do |format|
+      format.html {redirect_to conf_home_path, notice: "Sorry! you have to login first"}
+    end
     end
   end
 

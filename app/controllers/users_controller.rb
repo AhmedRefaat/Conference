@@ -65,10 +65,12 @@ class UsersController < ApplicationController
   def create
     @photo = self.photoselecter
     @user = User.new(params[:user])
-    #@user.id = session[:id]
+    @user.auser_id = session[:auser_id]
+    session[:auser_id] = nil
 
     respond_to do |format|
       if @user.save
+      session[:user_id] = @user.id
         #format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.html { redirect_to conf_home_url, notice: "User #{@user.name} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
@@ -132,20 +134,5 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
-  end
-  def admin_edit(user_id)
-    @photo = self.photoselecter
-    @current_user = User.find(session[:user_id])
-    p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-    p params[:id]
-    p ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-    p user
-    @user = User.find(params[:id])
-    @priv = ["admin" ,"moderator", "conference_member"]
-    # conference_member = 202 , moderator = 205 , admin = 307
-    respond_to do |format|
-      format.html #render admin_edit page
-    end
-    
   end
 end

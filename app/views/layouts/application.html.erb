@@ -63,10 +63,11 @@ background-image:url('/images/bard.jpg');
   </div>
     <% if session[:user_id]%>
   	<h3><li>logging: (<%= User.find(session[:user_id]).name%>)   <%= link_to "Log out", logout_path, :method => "delete"%>|<%= link_to "Settings", User.find(session[:user_id])%></li> </h3>
-  	<% if (User.find(session[:user_id]).user_status == "307")%>
-  		<li><%= link_to "List of Papers", papers_path%></li>
-  		<li><%= link_to "List of Users", users_path%></li>
-  	<% end %> 
+	  	<% if (User.find(session[:user_id]).admin)%>
+	  		<li><%= link_to "Admin DashBoard", new_admin_user_session_path%></li>
+	  	<% elsif (User.find(session[:user_id]).officer)%>
+	  		<li><%= link_to "List of Papers", papers_path%></li>
+	  	<% end %> 
   	<%else%>
   	<%= link_to "Sign in", login_path%>
   <%end%>

@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
     @photo = self.photoselecter
     user = Auser.find_by_username(params[:username])
     if user and user.authenticate(params[:password])
-      session[:user_id] = user.id
+       uuser = User.find_by_auser_id (user.id)
+      session[:user_id] = uuser.id
       redirect_to conf_home_url
     else
       redirect_to login_url, alert: "Invalid user/password combination"
