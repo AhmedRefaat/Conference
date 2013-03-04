@@ -7,7 +7,6 @@
 <table border="1">
   <tr>
     <th>Name</th>
-    <th>Username</th>
     <th>Job</th>
     <th>Country</th>
     <th>Organization</th>
@@ -19,7 +18,6 @@
 <% @users.each do |user| %>
   <tr>
     <td style="width: 180px; max-width: 150px; overflow: hidden"><%= user.name %></td>
-    <td><%= user.username %></td>
     <td style="width: 40px; max-width: 40px; overflow: hidden"><%= user.job %></td>
     <td style="width: 40px; max-width: 50px; overflow: hidden"><%= user.country %></td>
     <td style="width: 115px; max-width: 150px; overflow: hidden"><%= user.organization %></td>
