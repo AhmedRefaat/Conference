@@ -49,7 +49,7 @@ class AusersController < ApplicationController
     respond_to do |format|
       if @auser.save
       #session[:id] = @auser.id
-        format.html { redirect_to @auser, notice: 'Auser was successfully created.' }
+       format.html { redirect_to new_user_path, notice: "User #{@auser.username} was successfully created." }
         format.json { render json: @auser, status: :created, location: @auser }
       else
         format.html { render action: "new" }

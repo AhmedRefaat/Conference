@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
-  validates_presence_of :name,:mobile,:city, :country, :address, :mail, :organization, :username, :password
+  validates_presence_of :name,:mobile,:city, :country, :address, :mail, :organization
   validates_numericality_of :mobile
-  validates_uniqueness_of :username 
-  attr_accessible :address, :city, :country, :departement, :faculty, :job, :mail, :mobile, :name, :organization, :username, :password_digest, :password_confirmation, :password, :user_status
-  has_secure_password
+  attr_accessible :address, :city, :country, :departement, :faculty, :job, :mail, :mobile, :name, :organization, :user_status, :officer, :admin
+  
 
 end
