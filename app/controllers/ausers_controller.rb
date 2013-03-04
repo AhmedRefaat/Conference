@@ -43,7 +43,7 @@ class AusersController < ApplicationController
   def create
     @auser = Auser.new(params[:auser])
     #@auser.id = @@id + 20
-    @auser.id = 3
+    #@auser.id = 3
 #    @@id = @@id +1
 
     respond_to do |format|
