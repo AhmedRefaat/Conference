@@ -74,13 +74,21 @@ class PapersController < ApplicationController
   # GET /papers/1/edit
   def edit
     @photo = self.photoselecter
+    if ((session[:user_id] != nil) and ((User.find(session[:user_id]).admin) or (@paper.user_id == session[:user_id])))
     @paper = Paper.find(params[:id])
+    else 
+         respond_to do |format|
+      format.html {redirect_to conf_home_path, notice: "Sorry! you don't have privilege to edit this Abstract"}
+    end
+    end
+    
   end
 
   # POST /papers
   # POST /papers.json
   def create
     @paper = Paper.new(params[:paper])
+    if (session[:user_id])
     @paper.user_id = session[:user_id]
 
     respond_to do |format|
@@ -91,6 +99,10 @@ class PapersController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @paper.errors, status: :unprocessable_entity }
       end
+    end
+    else
+         respond_to do |format|
+      format.html {redirect_to conf_home_path, notice: "Sorry! you have to login first"}
     end
   end
 
@@ -115,6 +127,7 @@ class PapersController < ApplicationController
   # DELETE /papers/1
   # DELETE /papers/1.json
   def destroy
+    if ((session[:user_id] != nil) and (User.find(session[:user_id]).admin) )
     @paper = Paper.find(params[:id])
     @paper.destroy
 
@@ -122,5 +135,11 @@ class PapersController < ApplicationController
       format.html { redirect_to papers_url }
       format.json { head :no_content }
     end
+    else 
+          respond_to do |format|
+      format.html {redirect_to conf_home_path, notice: "Sorry! you have the privilage to access this page"}
+    end      
   end
+end
+end
 end
