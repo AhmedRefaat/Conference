@@ -19,7 +19,13 @@
     <td><%= paper.title %></td>
     <td><%= paper.abstract %></td>
     <td><%= paper.auth1 %></td>
-    <td><%= paper.status %></td>
+    <% if paper.acceptance == nil %>
+    <td style="text-align: center; color: red">Pending</td>
+    <% elsif paper.acceptance %>
+    <td style="text-align: center; color: red">Accepted</td>
+    <% elsif !paper.acceptance %>
+    <td style="text-align: center; color: red">Refused</td>
+    <% end %>
     <td><%= link_to 'Show', paper %></td>
     <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
     <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
