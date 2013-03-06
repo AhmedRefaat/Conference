@@ -6,7 +6,7 @@ class ConfController < ApplicationController
   end
   def home
     
-    @photo = self.photcolumn "First Author", :auth1oselecter
+    @photo = self.photoselecter
     #@photo = "cairo"+@num.to_s+".jpg"
   end
 
