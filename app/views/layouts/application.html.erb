@@ -62,7 +62,16 @@ background-image:url('/images/bard.jpg');
   <h1 style="text-align: center;color: black "><font size="6" face="Garamond">  Sheraton Dreamland & Confernce center</font></h1> <br />
   </div>
     
-  <%= link_to "Sign in", login_path%>
+  <% if session[:user_id]%>
+  	<h3><li>logging: (<%= User.find(session[:user_id]).name%>)   <%= link_to "Log out", logout_path, :method => "delete"%>|<%= link_to "Settings", User.find(session[:user_id])%></li> </h3>
+	  	<% if (User.find(session[:user_id]).admin)%>
+	  		<li><%= link_to "Admin DashBoard", new_admin_user_session_path%></li>
+	  	<% elsif (User.find(session[:user_id]).officer)%>
+	  		<li><%= link_to "List of Papers", papers_path%></li>
+	  	<% end %> 
+  	<%else%>
+  	<%= link_to "Sign in", login_path%>
+  <%end%>
  <p id="notice"><%= notice %></p> 
   
 </head>
