@@ -1,4 +1,7 @@
-ActiveAdmin.register AdminUser do     
+ActiveAdmin.register AdminUser do  
+  action_item do
+    link_to "Home", conf_home_path 
+  end   
   index do                            
     column :email                     
     column :current_sign_in_at        

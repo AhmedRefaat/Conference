@@ -9,5 +9,7 @@ ActiveAdmin.register User do
     
     default_actions
   end
-  
+    action_item do
+    link_to "Home", conf_home_path 
+  end
 end

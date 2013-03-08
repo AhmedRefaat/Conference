@@ -7,5 +7,7 @@ ActiveAdmin.register Paper do
     column "Acceptance Status", :acceptance
     default_actions
   end
-  
+    action_item do
+    link_to "Home", conf_home_path 
+  end
 end
