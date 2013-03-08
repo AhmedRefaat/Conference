@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
  gem 'bcrypt-ruby', '~> 3.0.0'
   gem "activeadmin"
+  gem 'country-select'
  gem 'sass-rails',   '~> 3.2.3'
 
 
@@ -19,6 +20,7 @@ group :development, :test do
 end
 group :production do 
   gem 'pg'
+  gem 'country-select'
 end
 
 group :test do
