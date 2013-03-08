@@ -4,6 +4,9 @@ ActiveAdmin.register User do
     column "Orgnization", :organization
     column "Country", :country
     column "Email", :mail
+    column :admin
+    column :officer
+    
     default_actions
   end
   
