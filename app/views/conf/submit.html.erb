@@ -22,7 +22,7 @@
     <% if paper.acceptance == nil %>
     <td style="text-align: center; color: red">Pending</td>
     <% elsif paper.acceptance %>
-    <td style="text-align: center; color: red">Accepted</td>
+    <td style="text-align: center; color: green">Accepted</td>
     <% elsif !paper.acceptance %>
     <td style="text-align: center; color: red">Refused</td>
     <% end %>
