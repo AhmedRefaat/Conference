@@ -36,7 +36,9 @@ class ConfController < ApplicationController
   end
 
   def about
-    @photo = self.photoselecter
+    #@photo = self.photoselecter
+    @num = rand(12) +1
+    @photo  = "dep"+@num.to_s+".jpg"
   end
   def venue
     @num = rand(26) +1
