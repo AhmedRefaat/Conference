@@ -10,10 +10,10 @@
  
 #sidebar {  
     float: left;  
-    width: 150px; 
-    height: 900px; 
+    width: 160px; 
+    height: 1100px; 
     background-image:url('/images/bard.jpg');  
-    margin: 25px;  
+    margin: 18px;  
 }  
  
 #wrap { 
@@ -71,7 +71,7 @@ background-image:url('/images/bard.jpg');
 	  		<li><%= link_to "List of Papers", papers_path%></li>
 	  	<% end %> 
   	<%else%>
-  	<%= link_to "Sign in", login_path%>
+  	&nbsp&nbsp&nbsp&nbsp<font size="3"> <%= link_to "Sign in", login_path%> </font> 
   <%end%>
  <p id="notice"><%= notice %></p> 
   
@@ -86,16 +86,38 @@ background-image:url('/images/bard.jpg');
       
   
 <div id="sidebar">
-	<h3  style="text-align:justify;color: red"> 
-	<font size="4"><br />&nbsp&nbsp<%= link_to "Home", conf_home_path%> </font><br /><br />
-	<font size="4">&nbsp&nbsp<%= link_to "Register", conf_register_path%> </font><br /><br />
-	<font size="4">&nbsp&nbsp<%= link_to "Contact Us", conf_contact_path%>  </font><br /><br />
-	<font size="4">&nbsp&nbsp<%= link_to "Submission", conf_submit_path%>  </font><br /><br />
-	<font size="4">&nbsp&nbsp<%= link_to "Committee", conf_Committees_path%>  </font><br /><br />
-	<font size="4">&nbsp&nbsp<%= link_to "Venue", conf_venue_path%>  </font><br /><br />
-	<font size="4">&nbsp&nbsp<%= link_to "About Us", conf_about_path%> </font> <br /><br />
+	<h3  style="text-align:justify"> 
+<br />
+	<center>	<a href =  /conf/home>
+<img border="0" src="/images/button(22).png"/>
+</a>
+<br /><br />
+		<a href =  /conf/register>
+<img border="0" src="/images/button(23).png"/>
+</a> 
+<br /><br />
+		<a href =  /conf/contact>
+<img border="0" src="/images/button(18).png"/>
+</a> <br /><br />
+		<a href =  /conf/submit>
+<img border="0" src="/images/button(25).png"/>
+</a>  <br /><br />
+		<a href =  /conf/Committees>
+<img border="0" src="/images/button(24).png"/>
+</a> 
+ <br /><br />
+		<a href =  /conf/venue>
+<img border="0" src="/images/button(27).png"/>
+</a>
+ <br /><br />
+		<a href =  /conf/about>
+<img border="0" src="/images/button(26).png"/>
+</a> 
+
 		<br />
+		<br />		<br />
 		<br />
+		</center>
 		<p style="text-align: center">
 	<%= image_tag(@photo, :width => '130', :height => '250')%>
 	<br /> <br /> <br />
