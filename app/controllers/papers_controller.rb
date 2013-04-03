@@ -2,7 +2,7 @@ class PapersController < ApplicationController
   
     def photoselecter
     @num = rand(15) +1
-    @photo  = "cairo"+@num.to_s+".jpg"
+    @photo  = "cairo"
     return @photo
   end
   # GET /papers
