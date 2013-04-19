@@ -54,4 +54,7 @@ class ConfController < ApplicationController
     @photo  = "hotel"
     #@photo = self.photoselecter
   end
+  def program
+    @photo = self.photoselecter
+  end
 end

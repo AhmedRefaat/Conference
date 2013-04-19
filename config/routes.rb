@@ -40,6 +40,8 @@ Conference::Application.routes.draw do
   get "conf/Committees"
   
   get "conf/venue"
+  
+  get "conf/program"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
