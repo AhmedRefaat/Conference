@@ -14,12 +14,11 @@ display: block;
 </style>
 </head>
 
-
+<h2 style="text-align: center"> Submission </h2>>
 <div id = "centered">
 <p>
-	<% if @new_submit != 0%>
-<h1 style="text-align: center">List of Paper You have submited</h1>
-<!-- <h2 > Submission </h2> --> 
+<h1>List of Paper You have submited</h1>
+
 <table>
   <tr>
     <th>Title</th>
@@ -45,19 +44,15 @@ display: block;
     <% end %>
     <td><%= link_to 'Show', paper %></td>
     <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-<!--    <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+    <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-<!--
-<%=  link_to 'New Paper', new_paper_path %>
---> 
+
+<%= link_to 'New Paper', new_paper_path %>
 </p>
 
-<%else %>
 
-<h3 style="text-align: center;color: black "><font size="5" face="Garamond" color="red"> Sorry There is no submission available any more!! </font></h1>
-	<%end%>
 </div>

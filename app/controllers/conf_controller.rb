@@ -24,20 +24,22 @@ class ConfController < ApplicationController
   end
 
   def submit
-    #closing the submission becasue of the deadline, then the submission page will leads u to the home page.
-    redirect_to conf_home_path
+    #closing the submission becasue of the deadline, then the submission page will leads u to the home page
+    #redirect_to conf_home_path
     
-    #@photo = self.photoselecter
+    @photo = self.photoselecter
+    @new_submit = 1 
     #@paper1 = Paper.new
-    #if session[:user_id]
-     # @paper = Paper.find_by_user_id(session[:user_id])
-      #if @paper.nil?
+    if session[:user_id]
+      @paper = Paper.find_by_user_id(session[:user_id])
+      if @paper.nil?
+          @new_submit = 0   
        # redirect_to new_paper_path
-      #end
-     # @papers = [@paper]
-    #else
-     # redirect_to login_url
-    #end
+      end
+      @papers = [@paper]
+    else
+      redirect_to login_url
+    end
     
   end
   def  Committees

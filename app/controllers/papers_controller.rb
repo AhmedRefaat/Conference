@@ -57,18 +57,19 @@ class PapersController < ApplicationController
   # GET /papers/new.json
   def new
     @photo = self.photoselecter
-    if (session[:user_id])
-    @paper = Paper.new
+    redirect_to conf_home_path
+    #if (session[:user_id])
+    #@paper = Paper.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @paper }
-    end
-    else
-       respond_to do |format|
-      format.html {redirect_to conf_home_path, notice: "Sorry! you have to login first"}
-    end
-    end
+    #respond_to do |format|
+     # format.html # new.html.erb
+      #format.json { render json: @paper }
+    #end
+    #else
+     #  respond_to do |format|
+     # format.html {redirect_to conf_home_path, notice: "Sorry! you have to login first"}
+    #end
+    #end
   end
 
   # GET /papers/1/edit
