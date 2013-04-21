@@ -60,6 +60,7 @@ class ConfController < ApplicationController
     #@photo = self.photoselecter
   end
   def program
+    @photo1  = "page000"
     @photo = self.photoselecter
   end
 end
