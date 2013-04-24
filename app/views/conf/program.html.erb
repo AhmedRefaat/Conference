@@ -9,9 +9,9 @@ font:bold 14px Arial;
 color:#000000;
 text-align:center;
 }
-#nav { padding: 6ex; height:80em ; border: 2px solid #aaa; width: 70%; background-image:url('/images/bard.jpg');margin-left: 27ex; margin-top: 7ex; border: 1ex solid #88540E;
+#nav { padding: 6ex; height:190em ; border: 2px solid #aaa; width: 72%; background-image:url('/images/bard.jpg');margin-left: 27ex; margin-top: 7ex; border: 1ex solid #88540E;
 margin-bottom: 15ex}
-#menu { opacity: 1; height:110em; margin-top: 1em; width: auto; margin-left: 2ex; overflow: hidden; }
+#menu { opacity: 1; height:220em; margin-top: 1em; width: auto; margin-left: 1ex; overflow: hidden; }
 
 </style>
 
@@ -23,8 +23,6 @@ margin-bottom: 15ex}
    
 <font size="6">
 <h1 style="text-align: center;color: black "><font size="6" face="Garamond"> Conference Program </font></h1>
-<br />
-<h1 style="text-align: center;color: black "><font size="2" face="Garamond"> For proper display for book's pages FireFox browser is prefered  </font></h1>
 </font>   
 </center>
 
@@ -34,48 +32,15 @@ margin-bottom: 15ex}
 
 <div id="nav">
 <ol id="menu">
-   
- 
-   
-   
-   
-<!-- Image Slide Show Start website image -->
-<script type="text/javascript" src="http://www.2createawebsites.com/resources/mike.js"></script>
-<script type="text/javascript" src="http://www.2createawebsites.com/resources/mikereelslideshow.js"></script> 
-<script type="text/javascript"> 
-var firstreel=new reelslideshow({
-  wrapperid: "myreel", //ID of blank DIV on page to house Slideshow 
- dimensions: [900, 900], //width/height of gallery in pixels. Should reflect dimensions of largest image
-      imagearray:  [    
-      [<a href="#"> <%= image_tag(@photo1+"1.jpg", :width => '750', :height => '1000')%></a>],   
-      [<a href="#"> <%= image_tag(@photo1+"2.jpg", :width => '750', :height => '1000')%></a>],
-      [<a href="#"> <%= image_tag(@photo1+"3.jpg", :width => '750', :height => '1000')%></a>],
-      [<a href="#"> <%= image_tag(@photo1+"4.jpg", :width => '750', :height => '1000')%></a>],
-      [<a href="#"> <%= image_tag(@photo1+"5.jpg", :width => '750', :height => '1000')%></a>],
-      [<a href="#"> <%= image_tag(@photo1+"6.jpg", :width => '750', :height => '1000')%></a>],
-      [<a href="#"> <%= image_tag(@photo1+"7.jpg", :width => '750', :height => '1000')%></a>],
-      [<a href="#"> <%= image_tag(@photo1+"8.jpg", :width => '750', :height => '1000')%></a>],
-      [<a href="#"> <%= image_tag(@photo1+"9.jpg", :width => '750', :height => '1000')%></a>]], 
-       displaymode: {type:'manual', pause:1000, cycles:0, wraparound:false},  
-  persist: false, //remember last viewed slide and recall within same session?  
-  fadeduration: 2000, //transition duration (milliseconds) 
-  descreveal: "ondemand",
-  togglerid: ""
-  })
-</script><div id="myreel">  
-
-</div>
-<div class="paginate">
-    <br />
-‹‹ <a href="javascript:firstreel.navigate('back')" style="margin-right:240px; color:#000000;">back</a>
-<a href="javascript:firstreel.navigate('forth')" style=" margin-left:240px; color:#000000;">next</a> ››
-</div>
-<!-- Image Slide Show End -->
+		<a href =  /program_book/program_book.pdf>
+<img border="0" src="/images/button(28).png"/>
+</a> 
 <br /><br />
-<font size="4">
-<%= link_to "Please click here to download conference program book", "/program_book/program_book.docx" %>
-</font>
-
+<img src="/images/prgram.jpg" alt="alt text" />
+<br /><br />
+		<a href =  /program_book/program_book.pdf>
+<img border="0" src="/images/button(28).png"/>
+</a> 
 </ol>
 </div>
 
