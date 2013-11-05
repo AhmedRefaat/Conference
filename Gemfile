@@ -47,10 +47,10 @@ group :assets do
   
   gem 'uglifier', '>= 1.0.3'
   
-  gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
+  gem "paperclip", :git => "https://github.com/thoughtbot/paperclip.git"
 end
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
+gem "paperclip", :git => "https://github.com/thoughtbot/paperclip.git"
 
 gem 'jquery-rails'
 
