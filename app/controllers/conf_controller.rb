@@ -55,8 +55,8 @@ class ConfController < ApplicationController
   end
   def venue
 
-    @num = rand(9) +1
-    @photo  = "hotel"
+    @num = rand(4) +1
+    @photo  = "/images/hotel1"
     #@photo = self.photoselecter
   end
   def program
