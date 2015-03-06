@@ -71,5 +71,10 @@ class ConfController < ApplicationController
   def proceeding
   @photo1  = "Page000"
     @photo = self.photoselecter
-  end  
+  end
+  
+  def previous_event
+    @photo1  = "Page000"
+    @photo = self.photoselecter
+  end
 end

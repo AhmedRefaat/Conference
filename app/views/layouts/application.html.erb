@@ -445,10 +445,15 @@ html, body {
 <center>	<a href =  /conf/program>
 <img border="0" src="/images/prg_button.jpg"/>
 </a>
+<%if params[:action] == "previous_event"%>
+<%if false%>
+the preivous condition is ok in case the running action now is the previous link action
+<%end%> 
  <br /><br />
 		<a href =  /conf/proceeding>
 <img border="0" src="/images/button(40).png"/>
 </a> 
+<%end%>
 <br /><br />
 		<a href =  /conf/register>
 <img border="0" src="/images/button(23).png"/>
@@ -459,24 +464,39 @@ html, body {
 </a> <br /><br />
 		<a href =  /conf/submit>
 <img border="0" src="/images/button(25).png"/>
-</a>  <br /><br />
+</a>  
+
+<%if false%>
+The following presets the committees link 
+
+<br /><br />
 		<a href =  /conf/Committees>
 <img border="0" src="/images/button(24).png"/>
-</a> 
+</a>
+<%end%> 
  <br /><br />
 		<a href =  /conf/venue>
 <img border="0" src="/images/button(27).png"/>
 </a>
+<%if params[:action] == "previous_event"%>
+<%if false%>
+the preivous condition is ok in case the running action now is the previous link action
+<%end%>
  <br /><br />
 		<a href =  /conf/album>
 <img border="0" src="/images/button(37).png"/>
 </a>
+<%end%>
 
  <br /><br />
 		<a href =  /conf/about>
 <img border="0" src="/images/button(26).png"/>
 </a> 
 
+ <br /><br />
+		<a href =  /conf/previous_event>
+<img border="0" src="/images/previous_button.jpg"/>
+</a> 
 
 
 		<br />
