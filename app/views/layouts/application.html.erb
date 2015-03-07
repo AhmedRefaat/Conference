@@ -3,30 +3,96 @@
 <head style = "text-align:center">
 
 <style type="text/css">
-#wrapper {  
-    width: 600px;  
-}  
  
-#sidebar {  
-    float: left;  
-    width: 160px; 
-    height: 1500px; 
-    background-image:url('/images/bard.jpg');  
-    margin: 18px;  
-}  
- 
-#wrap { 
-  width: 1100px; 
-  margin: 0 auto; 
+ ul.a {
+    list-style-type: circle;
 }
 
+div.img {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #0000ff;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+ 
+ #nav {
+      width: 100%;
+      float: left;
+      margin: 0 0 3em 0;
+      padding: 0;
+      list-style: none;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ccc; 
+      border-top: 1px solid #ccc; }
+   #nav li {
+      float: left; }
+  #nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  
+  border-bottom: solid thin #888;
+  border-left: solid thin #888;
+ 
+}    
+   #nav li a {
+      display: block;
+      padding: 10px 34.79px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size:medium;
+      color: #069;
+      border-right: 1px solid #ccc; }
+   #nav li a:hover {
+      color: #c00;
+      background-color: #fff; }
+
+
+#nav li ul {
+	display: none;  
+	}
+#nav li:hover ul, #navbar li.hover ul {
+	position: absolute;
+	display: block;
+	width: inherit;
+}
+ 
+   /* End navigation bar styling. */
+   
+   /* This is just styling for this specific page. */
+   body {
+      background-color: #555; 
+      font: medium Arial, Helvetica, sans-serif; }
+   #wrap {
+      width: 1050px;
+      margin: 0 auto;
+      background-color: #fff; }
+   h1 {
+      font-size: 1.5em;
+      font-style:oblique;
+      padding: 1em 8px;
+      text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 70px #ffffff, 0 30px 90px #ffffff, 0 0 110px #ffffff, 0 0 200px #ffffff;
+      color: #FFFFFF;
+ 
+      margin: 0; }
+   #content {
+      padding: 0 50px 50px; } 
+ 
+ 
+ 
+
+
+
 #container {
- width: 100%;
+ width: 103%;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow:hidden; 
-  background: url('/images/brown3.jpg') no-repeat center center fixed; 
+  background: #FFFFFF; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,145 +101,47 @@
 
 
 #header {
-width:98%;
-margin:0 auto 8px;
-	border:11px solid #F8D988;
-	box-shadow:2px 2px 6px rgba(0,0,0,0.8);
-background-image:url('/images/h5.jpg');
+width:100%;
+
+background: url('/images/cairoriv2.jpg') no-repeat;
+    background-size: 1100px 320px;
+    background-repeat: no-repeat;
 
 }
 
-#footer{
-width:*;
+#main {
+float:left;
+width:700px;
+padding:5px;
+margin: 30px;
+}
 
-margin:0 auto 10px;
-	border:1px solid #F8D988;
-	box-shadow:1px 1px 3px rgba(0,0,0,0.7);
-background-image:url('/images/h5.jpg');	
+#sidebar {
+	
+float:right;
+
+width:250px;
+height:500px;
+margin:  50px 11px;
+
+
+background:#FFFFFF;
+box-shadow: 0px 1px 3px 1px rgba(8,156,255,1);
+}
+
+
+
+#footer {
+clear:both;
+padding:8px 10px;
+background: #006699;	
+border:1px solid #FFFFFF;
 }
 
 #back {
-	background-image:url('/images/modern3.jpg');
+	background: #9ab8d9;
 }
 
-
-  /* ANIMATION */
-@-moz-keyframes cycle {
-	0%  { top:0px; }
-	4%  { top:0px; } 
-	16% { top:0px; opacity:1; z-index:0; } 
-	20% { top:325px; opacity:0; z-index:0; } 
-	21% { top:-325px; opacity:0; z-index:-1; }
-	92% { top:-325px; opacity:0; z-index:0; }
-	96% { top:-325px; opacity:0; }
-	100%{ top:0px; opacity:1; }
-	
-}
-@-moz-keyframes cycletwo {
-	0%  { top:-325px; opacity:0; }
-	16% { top:-325px; opacity:0; }
-	20% { top:0px; opacity:1; }
-	24% { top:0px; opacity:1; } 
-	36% { top:0px; opacity:1; z-index:0; } 
-	40% { top:325px; opacity:0; z-index:0; }
-	41% { top:-325px; opacity:0; z-index:-1; } 
-	100%{ top:-325px; opacity:0; z-index:-1; }
-}
-@-moz-keyframes cyclethree {
-	0%  { top:-325px; opacity:0; }
-	36% { top:-325px; opacity:0; }
-	40% { top:0px; opacity:1; }
-	44% { top:0px; opacity:1; } 
-	56% { top:0px; opacity:1; } 
-	60% { top:325px; opacity:0; z-index:0; }
-	61% { top:-325px; opacity:0; z-index:-1; } 
-	100%{ top:-325px; opacity:0; z-index:-1; }
-}
-@-moz-keyframes cyclefour {
-	0%  { top:-325px; opacity:0; }
-	56% { top:-325px; opacity:0; }
-	60% { top:0px; opacity:1; }
-	64% { top:0px; opacity:1; }
-	76% { top:0px; opacity:1; z-index:0; }
-	80% { top:325px; opacity:0; z-index:0; }
-	81% { top:-325px; opacity:0; z-index:-1; }
-	100%{ top:-325px; opacity:0; z-index:-1; }
-}
-@-moz-keyframes cyclefive {
-	0%  { top:-325px; opacity:0; }
-	76% { top:-325px; opacity:0; }
-	80% { top:0px; opacity:1; }
-	84% { top:0px; opacity:1; }
-	96% { top:0px; opacity:1; z-index:0; }
-	100%{ top:325px; opacity:0; z-index:0; }
-}
-
-@-webkit-keyframes cycle {
-	0%  { top:0px; }
-	4%  { top:0px; }
-	16% { top:0px; opacity:1; z-index:0; } 
-	20% { top:325px; opacity:0; z-index:0; }
-	21% { top:-325px; opacity:0; z-index:-1; }
-	50% { top:-325px; opacity:0; z-index:-1; }
-	92% { top:-325px; opacity:0; z-index:0; }
-	96% { top:-325px; opacity:0; }
-	100%{ top:0px; opacity:1; }
-	
-}
-@-webkit-keyframes cycletwo {
-	0%  { top:-325px; opacity:0; }
-	16% { top:-325px; opacity:0; }
-	20% { top:0px; opacity:1; }
-	24% { top:0px; opacity:1; } 
-	36% { top:0px; opacity:1; z-index:0; } 
-	40% { top:325px; opacity:0; z-index:0; }
-	41% { top:-325px; opacity:0; z-index:-1; }  
-	100%{ top:-325px; opacity:0; z-index:-1; }
-}
-@-webkit-keyframes cyclethree {
-	0%  { top:-325px; opacity:0; }
-	36% { top:-325px; opacity:0; }
-	40% { top:0px; opacity:1; }
-	44% { top:0px; opacity:1; } 
-	56% { top:0px; opacity:1; z-index:0; } 
-	60% { top:325px; opacity:0; z-index:0; } 
-	61% { top:-325px; opacity:0; z-index:-1; }
-	100%{ top:-325px; opacity:0; z-index:-1; }
-}
-@-webkit-keyframes cyclefour {
-	0%  { top:-325px; opacity:0; }
-	56% { top:-325px; opacity:0; }
-	60% { top:0px; opacity:1; }
-	64% { top:0px; opacity:1; }
-	76% { top:0px; opacity:1; z-index:0; }
-	80% { top:325px; opacity:0; z-index:0; }
-	81% { top:-325px; opacity:0; z-index:-1; }
-	100%{ top:-325px; opacity:0; z-index:-1; }
-}
-@-webkit-keyframes cyclefive {
-	0%  { top:-325px; opacity:0; }
-	76% { top:-325px; opacity:0; }
-	80% { top:0px; opacity:1; }
-	84% { top:0px; opacity:1; }
-	96% { top:0px; opacity:1; z-index:0; }
-	100%{ top:325px; opacity:0; z-index:0; }
-}
-
-/* ANIMATION BAR */
-@-moz-keyframes fullexpand {
-    0%, 20%, 40%, 60%, 80%, 100% { width:0%; opacity:0; }
-    4%, 24%, 44%, 64%, 84% { width:0%; opacity:0.3; }
-   16%, 36%, 56%, 76%, 96% { width:100%; opacity:0.7; }
-   17%, 37%, 57%, 77%, 97% { width:100%; opacity:0.3; }
-   18%, 38%, 58%, 78%, 98% { width:100%; opacity:0; }	
-}
-@-webkit-keyframes fullexpand {
-    0%, 20%, 40%, 60%, 80%, 100% { width:0%; opacity:0; }
-    4%, 24%, 44%, 64%, 84% { width:0%; opacity:0.3; }
-   16%, 36%, 56%, 76%, 96% { width:100%; opacity:0.7; }
-   17%, 37%, 57%, 77%, 97% { width:100%; opacity:0.3; }
-   18%, 38%, 58%, 78%, 98% { width:100%; opacity:0; }	
-}
 
 
 
@@ -250,106 +218,14 @@ html, body {
 	width:960px;
 }
 
-/* CONTENT SLIDER */
-#content-slider {
-	width:100%;
-	height:480px;
-	margin:10px auto 0;
-}
-/* SLIDER */
-#slider {
-	background:#000;
-	border:5px solid #eaeaea;
-	box-shadow:1px 1px 5px rgba(0,0,0,0.7);
-	height:440px;
-	width:780px;
-	margin:40px auto 0;
-	overflow:visible;
-	position:relative;
-}
-#mask {
-	overflow:hidden;
-	height:440px;
-}
-#slider ul {
-	margin:0;
-	padding:0;
-	position:relative;
-}
-#slider li {
-	width:680px;
-	height:320px;
-	position:absolute;
-	top:-325px;
-	list-style:none;
-}
-
-#slider li.firstanimation {
-	-moz-animation:cycle 25s linear infinite;	
-	-webkit-animation:cycle 25s linear infinite;		
-}
-#slider li.secondanimation {
-	-moz-animation:cycletwo 25s linear infinite;
-	-webkit-animation:cycletwo 25s linear infinite;		
-}
-#slider li.thirdanimation {
-	-moz-animation:cyclethree 25s linear infinite;
-	-webkit-animation:cyclethree 25s linear infinite;		
-}
-#slider li.fourthanimation {
-	-moz-animation:cyclefour 25s linear infinite;
-	-webkit-animation:cyclefour 25s linear infinite;		
-}
-#slider li.fifthanimation {
-	-moz-animation:cyclefive 25s linear infinite;
-	-webkit-animation:cyclefive 25s linear infinite;		
-}
-
-#slider .tooltip {
-	background:rgba(0,0,0,0.7);
-	width:300px;
-	height:60px;
-	position:relative;
-	bottom:75px;
-	left:-320px;
-	-moz-transition:all 0.3s ease-in-out;
-	-webkit-transition:all 0.3s ease-in-out;  
-}
-#slider .tooltip h1 {
-	color:#fff;
-	font-size:24px;
-	font-weight:300;
-	line-height:60px;
-	padding:0 0 0 20px;
-}
-#slider li#first:hover .tooltip, 
-#slider li#second:hover .tooltip, 
-#slider li#third:hover .tooltip, 
-#slider li#fourth:hover .tooltip, 
-#slider li#fifth:hover .tooltip {
-	left:0px;
-}
-#slider:hover li, 
-#slider:hover .progress-bar {
-	-moz-animation-play-state:paused;
-	-webkit-animation-play-state:paused;
-}
-
-/* PROGRESS BAR */
-.progress-bar { 
-	position:relative;
-	top:-5px;
-	width:680px; 
-	height:5px;
-	background:#000;
-	-moz-animation:fullexpand 25s ease-out infinite;
-	-webkit-animation:fullexpand 25s ease-out infinite;
-}
-
 
 
 
 </style>
+</head>
+
+  
+
 <div id="back">
 <div id="wrap">
 <div id="container">
@@ -360,20 +236,48 @@ html, body {
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <h1 style="text-align: center;color: #FADEDC "><font size="6" face="Garamond"> 	1st ANNUAL C.L. DAVIS MIDDLE EASTERN DIVISION  </font></h1>
+  <h1 style="text-align: center;color: #000000 "><font size="5" face="Garamond"> 	1st ANNUAL C.L. DAVIS MIDDLE EASTERN DIVISION  </font></h1>
   <br />
-  <h1 style="text-align: center;color: #FADEDC "><font size="6" face="Garamond">  DIAGNOSTIC PATHOLOGY SYMPOSIUM:</font></h1> 
-<br />  <h1 style="text-align: center;color: #FADEDC "><font size="6" face="Garamond">  PATHOLOGY OF DOMESTIC AND LABORATORY ANIMALS</font></h1> 
+  <h1 style="text-align: center;color: #000000 "><font size="5" face="Garamond">  DIAGNOSTIC PATHOLOGY SYMPOSIUM:</font></h1> 
+<br />  <h1 style="text-align: center;color: #000000 "><font size="5" face="Garamond">  PATHOLOGY OF DOMESTIC AND LABORATORY ANIMALS</font></h1> 
 
-<br />  <h1 style="text-align: center;color: #FFDF5F "><font size="5" face="Monaco"><b> <u> 
+<br />  <h1 style="text-align: center;color: #000000 "><font size="4" face="Monaco" style="background: #F2F2F2"><b> <u> 
 	   Symposium:  21-24 March 2015
 </b></u></font></h1>
-<br />  <h1 style="text-align: center;color: #FFDF5F "><font size="5" face="Monaco"><b> <u>
+<br />  <h1 style="text-align: center;color: #000000 "><font size="4" face="Monaco"style="background: #F2F2F2"><b> <u>
        Conference: 25-27 March 2015
  </b></u></font></h1> 
-<br />  <h1 style="text-align: center;color: #FFDFA2 "><font size="5" face="Garamond">  Mövenpick Hotel Cairo Pyramids</font></h1> <br />
+<br />  <h1 style="text-align: center;color: #000000 "><font size="4" face="Garamond">  Mövenpick Hotel Cairo Pyramids</font></h1> <br />
   </div>
-    
+ <center> 
+<ul id="nav">
+  <li><a href=/conf/home>Home</a></li>
+  <li><a href=/conf/program>Program</a>
+     <ul>
+     	 <a href=/conf/symposium_prog>Symposium</a>
+         <a href=/conf/conf_prog>Conference </a>
+     </ul>
+     </li>
+  <li><a href=/conf/register>Register</a></li>
+  
+  <li><a href=/conf/submit>Submit</a></li>
+  <li><a href=/conf/venue>Venue</a></li>
+  
+  <li><a href>Previous Event</a>
+     <ul>
+     	 <a href=/conf/album>&nbsp&nbsp&nbspAlbums&nbsp&nbsp&nbsp&nbsp</a>
+         <a href=/conf/proceeding>&nbsp&nbsp&nbspPreceeding&nbsp&nbsp&nbsp </a>
+     </ul>
+  </li>
+  <li><a href=/conf/contact>Contact</a></li>
+  <li><a href=/conf/about>About</a></li>
+</ul>
+
+</center>  
+
+
+
+
     <br />
   <% if session[:user_id]%>
   	<h3><li>logging: (<%= User.find(session[:user_id]).name%>)   <%= link_to "Log out", logout_path, :method => "delete"%>|<%= link_to "Settings", User.find(session[:user_id])%></li> </h3>
@@ -386,154 +290,67 @@ html, body {
   	&nbsp&nbsp&nbsp&nbsp &nbsp<font size="3"> <%= link_to "Sign in", login_path%> </font> 
   <%end%>
  <p id="notice"><%= notice %></p> 
-  
-</head>
 
 
+<div id="sidebar">
+	<br />
+	<p><h1 style="text-align: left;color: #000000 "><font size="5" face="Garamond">
+		&nbsp&nbsp&nbspImportant Dates
 
-<div class="container">
-   <div id="content-slider">
-      <div id="slider">  <!-- Slider container -->
-         <div id="mask">  <!-- Mask -->
+	</h1></p>
+<br />
+  &nbsp&nbsp&nbsp  <img src="/images/Calendar2.jpg" width="200" height="200">
 
-
-         <ul>
-         <li id="first" class="firstanimation">  <!-- ID for tooltip and class for animation -->
-         <a href="#"> <%= image_tag(@photo+"1.jpg", :width => '900', :height => '440')%> </a>
-
-         </li>
- 
-         <li id="second" class="secondanimation">
-         <a href="#"> <%= image_tag(@photo+"2.jpg", :width => '900', :height => '440')%> </a>
-
-         </li>
-
-         <li id="third" class="thirdanimation">
-         <a href="#"> <%= image_tag(@photo+"3.jpg", :width => '900', :height => '440')%></a>
-
-         </li>
-
-         <li id="fourth" class="fourthanimation">
-         <a href="#"> <%= image_tag(@photo+"4.jpg", :width => '900', :height => '440')%> </a>
-
-         </li>
-
-         <li id="fifth" class="fifthanimation">
-         <a href="#"> <%= image_tag(@photo+"5.jpg", :width => '900', :height => '440')%> </a>
-
-         </li>
-         </ul>
-
-         </div>  <!-- End Mask -->
-         <div class="progress-bar"></div>  <!-- Progress Bar -->
-      </div>  <!-- End Slider Container -->
-   </div>
+<h1 style="text-align: center;color: #000000 "><font size="4" face="Garamond">
+ <li> &nbspSubmission Deadline <br /> </li>
+   <font color="blue">&nbsp&nbsp&nbsp1 March 2015 </font>
+  </h1>
+<br />
+<h1 style="text-align: center;color: #000000 "><font size="4" face="Garamond">
+ <li> &nbspSymposium &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br /> </li>
+  <font color="blue"> &nbsp&nbsp&nbsp21-24 March 2015 </font>
+  </h1>
+  <br />
+  <h1 style="text-align: center;color: #000000 "><font size="4" face="Garamond">
+ <li> &nbspConference &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br /> </li>
+   <font color="blue">&nbsp&nbsp&nbsp25-27 March 2015 </font>
+  </h1>
 </div>
 
 
 
-<div id="wrapper">  
-      
-  
-<div id="sidebar">
-	<h3  style="text-align:justify"> 
-<br />
-	<center>	<a href =  /conf/home>
-<img border="0" src="/images/button(22).png"/>
-</a>
-<br /><br />
-<center>	<a href =  /conf/program>
-<img border="0" src="/images/prg_button.jpg"/>
-</a>
-<%if params[:action] == "previous_event"%>
-<%if false%>
-the preivous condition is ok in case the running action now is the previous link action
-<%end%> 
- <br /><br />
-		<a href =  /conf/proceeding>
-<img border="0" src="/images/button(40).png"/>
-</a> 
-<%end%>
-<br /><br />
-		<a href =  /conf/register>
-<img border="0" src="/images/button(23).png"/>
-</a> 
-<br /><br />
-		<a href =  /conf/contact>
-<img border="0" src="/images/button(18).png"/>
-</a> <br /><br />
-		<a href =  /conf/submit>
-<img border="0" src="/images/button(25).png"/>
-</a>  
-
-<%if false%>
-The following presets the committees link 
-
-<br /><br />
-		<a href =  /conf/Committees>
-<img border="0" src="/images/button(24).png"/>
-</a>
-<%end%> 
- <br /><br />
-		<a href =  /conf/venue>
-<img border="0" src="/images/button(27).png"/>
-</a>
-<%if params[:action] == "previous_event"%>
-<%if false%>
-the preivous condition is ok in case the running action now is the previous link action
-<%end%>
- <br /><br />
-		<a href =  /conf/album>
-<img border="0" src="/images/button(37).png"/>
-</a>
-<%end%>
-
- <br /><br />
-		<a href =  /conf/about>
-<img border="0" src="/images/button(26).png"/>
-</a> 
-
- <br /><br />
-		<a href =  /conf/previous_event>
-<img border="0" src="/images/previous_button.jpg"/>
-</a> 
 
 
-		<br />
-		<br />
-		</center>
-		<p style="text-align: center">
-	<%= image_tag(@photo+(rand(7)	+1).to_s+".jpg", :width => '130', :height => '250')%>
-	<br /> <br /> <br />
-	<%= image_tag('/images/downlad2.jpg', :width => '130', :height => '200')%>
-	</p>
-	
-	</div>  
-  
-</div> 
-
-
-<body style="text-align: 'center'">
 
 <%= yield %>
-
-
-
-
-</div>
 <div id="footer">
-
-
  <center>
- <font size="3" color=#F8D988 style="italic"> © 2015 Faculty of Veterinary Medicine, Cairo University</font>
+ <font size="4" color=#FFFFFF style="italic"> © 2015 Faculty of Veterinary Medicine, Cairo University</font>
 </center>
-
- 
-</div>
 </div>
 
+
+
 </div>
-
-</body>
-
+</div>
+</div>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

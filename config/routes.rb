@@ -41,7 +41,8 @@ Conference::Application.routes.draw do
   
   get "conf/venue"
   
-  get "conf/program"
+  get "conf/conf_prog"
+  get "conf/symposium_prog"
   get "conf/album"
   get "conf/proceeding"
   get "conf/previous_event"
